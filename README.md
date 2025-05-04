@@ -226,3 +226,4 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 - **1.2.0** - Added batch operations, JSON output, configuration support
 - **1.1.0** - Enhanced language parsers for modern syntax
 - **1.0.0** - Initial release with core functionality
+
