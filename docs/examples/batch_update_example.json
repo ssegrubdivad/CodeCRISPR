@@ -1,0 +1,12 @@
+{
+  "updates": [
+    {
+      "method": "function_name_1",
+      "code": "def function_name_1():\n    # Updated implementation\n    return 'updated'"
+    },
+    {
+      "method": "function_name_2",
+      "code": "def function_name_2(param):\n    # Another update\n    return param * 2"
+    }
+  ]
+}

@@ -1,2 +1,228 @@
-# CodeCRISPR
-Precision code editing at the function level ... like CRISPR for your codebase
+# CodeCRISPR: Precise Code Editing Framework
+
+CodeCRISPR is a lightweight, language-agnostic framework that enables precise, targeted code modifications optimized for LLM-assisted development workflows. Like its biological namesake, CodeCRISPR allows for surgical edits to specific functions or code blocks without touching the rest of your codebase.
+
+## Key Features
+
+- **Surgical Precision**: Edit specific functions or code blocks without rewriting entire files
+- **Language Agnostic**: Supports Python, JavaScript, TypeScript, HTML, CSS, PHP, Rust, C++, R, MATLAB, LaTeX, and SPSS
+- **Zero Dependencies**: Pure Python implementation using only standard library
+- **LLM Optimized**: Designed for efficient use with Claude and other LLMs via MCP
+- **Performance Focused**: Single-parse efficiency with minimal memory overhead
+- **Safe Operations**: Automatic backup creation before modifications
+- **JSON Integration**: Machine-readable output for toolchain integration
+- **Batch Operations**: Update multiple methods in a single command
+- **Configuration Support**: Customizable behavior via config file
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- macOS (for MCP integration with Claude Desktop)
+
+### Installation
+
+1. Clone or copy the CodeCRISPR directory to your `ClaudeMCP` directory:
+
+```bash
+cp -r /path/to/codecrispr ~/ClaudeMCP/CC
+```
+
+2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
+
+3. (Optional) Install shell completions:
+
+```bash
+python3 CC/tools/completion.py
+```
+
+### Basic Usage
+
+#### Inspect a File
+
+```bash
+python3 CC/codecrispr.py yourfile.py --inspect
+```
+
+#### Modify a Function
+
+```bash
+python3 CC/codecrispr.py yourfile.py function_name 'new code here'
+```
+
+#### Preview a Function
+
+```bash
+python3 CC/codecrispr.py yourfile.py --inspect --preview function_name
+```
+
+### Advanced Usage
+
+#### JSON Output
+
+```bash
+python3 CC/codecrispr.py yourfile.py --inspect --json
+```
+
+#### Preview Changes Before Applying
+
+```bash
+python3 CC/codecrispr.py yourfile.py function_name 'new code' --preview-changes
+python3 CC/codecrispr.py yourfile.py function_name 'new code' --apply
+```
+
+#### Batch Updates
+
+```bash
+python3 CC/codecrispr.py yourfile.py --batch updates.json
+```
+
+See [docs/examples/batch_update_example.json](docs/examples/batch_update_example.json) for the batch file format.
+
+#### Configuration
+
+```bash
+# Show all configuration
+python3 CC/codecrispr.py --config
+
+# Get specific value
+python3 CC/codecrispr.py --config general.backup_enabled
+
+# Set configuration value
+python3 CC/codecrispr.py --config general.backup_enabled=false
+```
+
+Configuration file is stored at `~/.codecrispr/config.ini`
+
+## Documentation
+
+- [Novice User Guide](docs/guides/novice_user_guide.md) - Friendly introduction for new users
+- [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
+
+## Supported Languages
+
+| Language | File Extensions | Parser Type |
+|----------|----------------|-------------|
+| Python | .py, .pyw, .pyi | Indentation-based |
+| JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
+| TypeScript | .ts, .tsx | Pattern-based |
+| HTML | .html, .htm | Tag-based |
+| CSS | .css, .scss, .less | Block-based |
+| PHP | .php, .php3-5, .phtml | Pattern-based |
+| Rust | .rs | Pattern-based |
+| C++ | .cpp, .cxx, .cc, .h, .hpp | Pattern-based |
+| R | .r, .R | Pattern-based |
+| MATLAB | .m | Pattern-based |
+| LaTeX | .tex | Environment-based |
+| SPSS | .sps, .spss | Block-based |
+
+## Configuration Options
+
+| Section | Option | Default | Description |
+|---------|--------|---------|-------------|
+| general | backup_enabled | true | Create backups before modifications |
+| general | backup_extension | .bak | Extension for backup files |
+| general | default_language | python_tool | Default language parser |
+| output | use_colors | true | Enable colored output |
+| output | json_pretty | true | Pretty-print JSON output |
+| output | show_line_numbers | false | Show line numbers by default |
+| editor | tab_size | 4 | Default tab size |
+| editor | use_spaces | true | Use spaces instead of tabs |
+| editor | trim_trailing_whitespace | true | Remove trailing whitespace |
+
+## Architecture
+
+CodeCRISPR uses a modular architecture with language-specific parsers:
+
+```
+CC/
+├── codecrispr.py           # Main CLI and core logic
+├── tools/                  # Language-specific parsers
+│   ├── python_tool.py
+│   ├── javascript_tool.py
+│   ├── completion.py      # Shell completion scripts
+│   └── ...
+└── docs/                   # Documentation
+    ├── guides/
+    └── examples/          # Example files
+```
+
+Each language tool implements the `CodeCRISPR` class with required methods for parsing and code replacement.
+
+## Recent Updates
+
+- Enhanced error handling with file validation
+- Added JSON output format for better integration
+- Implemented batch operations for multiple edits
+- Added diff preview before applying changes
+- Improved language detection with fallback mechanisms
+- Configuration file support for customization
+- Shell completion for bash and zsh
+
+## Contributing
+
+To add support for a new language:
+
+1. Create a new tool file in `tools/[language]_tool.py`
+2. Implement the `CodeCRISPR` class with required methods
+3. Add the file extension mapping in `codecrispr.py`
+
+See the [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) for detailed implementation instructions.
+
+## Use Cases
+
+- **LLM-Assisted Development**: Efficient code modifications with Claude
+- **Targeted Refactoring**: Update specific functions without full-file rewrites
+- **Code Review**: Extract and examine specific code blocks
+- **Automated Code Updates**: Programmatic code modifications
+- **CI/CD Integration**: JSON output enables seamless toolchain integration
+- **Batch Processing**: Update multiple files and functions in automation scripts
+
+## Performance
+
+CodeCRISPR is designed for efficiency:
+
+- Single file parse on initialization
+- O(1) lookups for method locations
+- Incremental offset updates after edits
+- No external dependencies or heavy frameworks
+- Minimal memory footprint
+
+## License
+
+MIT License - See [LICENSE](LICENSE) file for details
+
+## Credits
+
+CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particularly with Anthropic's Claude via the Model Context Protocol (MCP). The framework demonstrates how targeted code editing can dramatically reduce token usage while improving reliability.
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Permission Errors**: Ensure the file has write permissions
+2. **Parser Not Found**: Check that the file extension is supported
+3. **Method Not Found**: Use `--inspect` to see available methods
+4. **JSON Parse Errors**: Validate your batch JSON file format
+
+### Getting Help
+
+- Check the documentation in the `docs/` directory
+- Review examples in `docs/examples/`
+- Submit issues on the project repository
+
+## Roadmap
+
+- [ ] Add support for more languages (Go, Swift, Kotlin)
+- [ ] Implement semantic code analysis
+- [ ] Add Git integration for automatic commits
+- [ ] Create VS Code extension
+- [ ] Add web interface for visual editing
+- [ ] Implement code formatting integration
+
+## Version History
+
+- **1.2.0** - Added batch operations, JSON output, configuration support
+- **1.1.0** - Enhanced language parsers for modern syntax
+- **1.0.0** - Initial release with core functionality
