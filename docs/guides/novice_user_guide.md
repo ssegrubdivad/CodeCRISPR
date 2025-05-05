@@ -43,16 +43,17 @@ When working with AI assistants like Claude, you have a limited number of tokens
 
 **Without CodeCRISPR:**
 - Claude reads entire file (uses tokens)
-- You ask for a change
+- You ask for a change (minimal tokens)
 - Claude either:
   - rewrites entire file to make changes (uses more tokens), or
-  - rewrites the segement you want to change in its original format as a search string (uses more tokens), then writes the part you want to change in its updated format (uses more tokens)
+  - rewrites the segement you want to change in its original format as a search string (uses more tokens), then writes the part you want to change in its updated format (uses even more tokens)
 - Multiple operations = Multiple full file reads and writes or segment writes and rewrites
 
 **With CodeCRISPR:**
 - Claude inspects file once (builds a map)
-- Subsequent changes use the map (minimal tokens)
-- Only changed segment content is transmitted (minimal tokens)
+- You ask for a change (minimal tokens)
+- Subsequent changes use the map (modest tokens)
+- Only changed segment content is transmitted (modest tokens)
 - Multiple operations = Single inspection + efficient updates
 
 ### The "Inspect Once, Edit Many" Pattern
