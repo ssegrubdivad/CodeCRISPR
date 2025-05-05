@@ -193,6 +193,33 @@ While Abstract Syntax Trees (AST) provide a powerful and precise way to understa
 
 CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficient, and user-friendly solution that remains valuable even when advanced AST tools are available, ensuring that developers have the right tool for every situation.
 
+## Supported Languages
+
+| Language | File Extensions | Parser Type |
+|----------|-----------------|-------------|
+| C++ | .cpp, .cxx, .cc, .h, .hpp | Pattern-based |
+| CSS | .css, .scss, .less | Block-based |
+| Go | .go | Pattern-based |
+| HTML | .html, .htm | Tag-based |
+| Java | .java | Pattern-based |
+| JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
+| JSON | .json | Named-key-based |
+| Julia | .jl | Pattern-based |
+| LaTeX | .tex | Environment-based |
+| Markdown | .md | Heading-based |
+| MATLAB | .m | Pattern-based     |
+| PHP | .php, .php3-5, .phtml | Pattern-based |
+| Python | .py, .pyw, .pyi | Indentation-based |
+| R | .r, .R | Pattern-based |
+| Rust | .rs | Pattern-based |
+| Shell Scripts | .sh, .bash | Block-based |
+| SPSS | .sps, .spss | Block-based |
+| SQL | .sql | Pattern-based |
+| SVG | .svg | Tag-based |
+| Swift | .swift | Pattern-based |
+| TypeScript | .ts, .tsx | Pattern-based |
+| XML | .xml | Tag-based |
+
 ## Documentation
 
 - [A Comprehensive Explanation of CodeCRISPR](docs/guides/narrative_overview.md) - A detailed narrative overview of all that is CodeCRiSPER, for those who like to read
@@ -222,33 +249,6 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
   - [Swift Tool Guide](docs/tool_guides/swift_tool_guide.md)
   - [XML Tool Guide](docs/tool_guides/xml_tool_guide.md)
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
-
-## Supported Languages
-
-| Language | File Extensions | Parser Type |
-|----------|-----------------|-------------|
-| C++ | .cpp, .cxx, .cc, .h, .hpp | Pattern-based |
-| CSS | .css, .scss, .less | Block-based |
-| Go | .go | Pattern-based |
-| HTML | .html, .htm | Tag-based |
-| Java | .java | Pattern-based |
-| JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
-| JSON | .json | Named-key-based |
-| Julia | .jl | Pattern-based |
-| LaTeX | .tex | Environment-based |
-| Markdown | .md | Heading-based |
-| MATLAB | .m | Pattern-based     |
-| PHP | .php, .php3-5, .phtml | Pattern-based |
-| Python | .py, .pyw, .pyi | Indentation-based |
-| R | .r, .R | Pattern-based |
-| Rust | .rs | Pattern-based |
-| Shell Scripts | .sh, .bash | Block-based |
-| SPSS | .sps, .spss | Block-based |
-| SQL | .sql | Pattern-based |
-| SVG | .svg | Tag-based |
-| Swift | .swift | Pattern-based |
-| TypeScript | .ts, .tsx | Pattern-based |
-| XML | .xml | Tag-based |
 
 ### Parser Types
 - Pattern-based refers to tools that use regular expressions to identify function or method patterns (e.g., Java, Rust, Go).
