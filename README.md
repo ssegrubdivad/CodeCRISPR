@@ -16,7 +16,7 @@ When working with AI assistants like Claude, you have a limited number of tokens
 - Claude reads entire file (uses tokens)
 - You ask for a change
 - Claude reads entire file again to make changes (uses more tokens)
-- Claude rewrites the entire file
+- Claude rewrites the entire file (uses more tokens)
 - Multiple operations = Multiple full file reads
 
 **With CodeCRISPR:**
