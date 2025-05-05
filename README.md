@@ -212,7 +212,7 @@ CodeCRISPR is designed for efficiency:
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) file for details
+Modified MIT License - See [LICENSE](LICENSE) file for details
 
 ## Credits
 
