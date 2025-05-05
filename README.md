@@ -174,7 +174,9 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 - [Customization Guide](docs/guides/customization.md) - Information about cutomizing via the INI file
 - Language Specific Guides
   - [Go Tool Guide](docs/tool_guides/go_tool_guide.md)
+  - [JavaScript Tool Guide](docs/tool_guides/javascript_tool_guide.md)
   - [Markdown Tool Guide](docs/tool_guides/markdown_tool_guide.md)
+  - [Python Tool Guide](docs/tool_guides/python_tool_guide.md)
   - [Swift Tool Guide](docs/tool_guides/swift_tool_guide.md)
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
