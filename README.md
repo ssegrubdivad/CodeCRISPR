@@ -205,6 +205,9 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
   - [Go Tool Guide](docs/tool_guides/go_tool_guide.md)
   - [HTML Tool Guide](docs/tool_guides/html_tool_guide.md)
   - [JavaScript Tool Guide](docs/tool_guides/javascript_tool_guide.md)
+  - [Java Tool Guide](docs/tool_guides/java_tool_guide.md)
+  - [JSON Tool Guide](docs/tool_guides/json_tool_guide.md)
+  - [Julia Tool Guide](docs/tool_guides/julia_tool_guide.md)
   - [LaTeX Tool Guide](docs/tool_guides/latex_tool_guide.md)
   - [Markdown Tool Guide](docs/tool_guides/markdown_tool_guide.md)
   - [MATLAB Tool Guide](docs/tool_guides/matlab_tool_guide.md)
@@ -212,8 +215,11 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
   - [Python Tool Guide](docs/tool_guides/python_tool_guide.md)
   - [R Tool Guide](docs/tool_guides/r_tool_guide.md)
   - [Rust Tool Guide](docs/tool_guides/rust_tool_guide.md)
+  - [Shell Tool Guide](docs/tool_guides/shell_tool_guide.md)
   - [SPSS Tool Guide](docs/tool_guides/spss_tool_guide.md)
+  - [SQL Tool Guide](docs/tool_guides/sql_tool_guide.md)
   - [Swift Tool Guide](docs/tool_guides/swift_tool_guide.md)
+  - [XML Tool Guide](docs/tool_guides/xml_tool_guide.md)
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
 ## Supported Languages
@@ -240,6 +246,15 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 | Swift | .swift | Pattern-based |
 | TypeScript | .ts, .tsx | Pattern-based |
 | XML | .xml | Tag-based |
+
+### Parser Types
+- Pattern-based refers to tools that use regular expressions to identify function or method patterns (e.g., Java, Rust, Go).
+- Block-based is used for languages where logical units are enclosed in braces or similar delimiters without formal declaration syntax (e.g., CSS, Shell, SPSS).
+- Tag-based fits languages like HTML and XML that rely on nested, named tag structures.
+- Named-key-based (for JSON) reflects hierarchical object/array traversal via named keys.
+- Environment-based (LaTeX) uses \\begin{...} and \\end{...} to delimit sections.
+- Heading-based (Markdown) uses section titles with # symbols.
+- Indentation-based (Python) depends on whitespace to define scope.
 
 ## Configuration Options
 
