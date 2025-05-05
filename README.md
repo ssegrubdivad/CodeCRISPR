@@ -67,18 +67,22 @@ Consider a 1,000-line file with 10 functions to update:
 
 ### Installation
 
-1a. Download and unzip the CodeCRISPR.zip file, OR
+1a. Download and unzip the CodeCRISPR.zip file, 
+
+OR
 
 1b. Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  
+
 For example:
 
 ```bash
-cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
-```
-or
-```bash
 cp -r ~/Downloads/CodeCRISPR ~/path/to/your/mcp/directory/CC
 ```
+OR
+```bash
+cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
+```
+
 2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
 
 3. (Optional) Install shell completions:
