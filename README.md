@@ -6,6 +6,7 @@ Save your tokens with CodeCRISPR and MCP in Claude Desktop.
 <br /><br />
 CodeCRISPR is a lightweight, language-agnostic framework that enables precise, targeted code modifications optimized for LLM-assisted development workflows. Like its biological namesake, CodeCRISPR allows for surgical edits to specific functions or code blocks without touching the rest of your codebase and without repeated token waste.
 </p>
+
 See the [narrative overview of CodeCRISPR](docs/guides/narrative_overview.md) for a comprehensive explanation.
 
 ## A Token Efficiency Advantage
