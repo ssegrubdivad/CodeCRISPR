@@ -68,6 +68,7 @@ Consider a 1,000-line file with 10 functions to update:
 ### Installation
 
 1. a) Download and unzip the CodeCRISPR.zip file, OR
+
 1. b) Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  
 For example:
 
