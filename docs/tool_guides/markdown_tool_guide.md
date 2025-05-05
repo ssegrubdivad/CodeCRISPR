@@ -177,8 +177,12 @@ Consider updating 3 sections in a 1000-line markdown document:
 
 ## Markdown Tool Limitations
 
-- Does not handle complex nested structures beyond standard markdown headings
-- Cannot modify individual list items or paragraphs without replacing the entire section
-- May not work correctly with documents that have unconventional heading patterns
+The Markdown Tool is designed for reliability and efficiency across most well-structured Markdown documents. However, users should be aware of certain inherent limitations based on the nature of the Markdown format and the tool’s lightweight parsing strategy:
+
+- The tool does not attempt to build a full abstract syntax tree of the document, meaning that although it respects structural boundaries created by headings and ignores false headings inside fenced code blocks, it does not analyze deeper semantic relationships such as paragraphs inside blockquotes, nested list hierarchies, or inline elements with special formatting.
+- It cannot selectively modify content within a heading-defined section—such as changing a single bullet point or editing one paragraph—without replacing the entire block associated with that heading. This limitation is intrinsic to a system that works at the section level rather than at the fine-grained token level.
+- While the tool is now robust against misinterpreting headings that appear within fenced code blocks (e.g., within triple backtick regions), it may still behave unpredictably with documents that use unconventional structures—such as headings embedded in HTML, or documents that omit heading levels or reuse heading names multiple times.
+
+For most documentation tasks—including changelogs, instructional material, API references, and structured project notes—the tool provides a safe and efficient editing model with significant advantages in clarity and token efficiency.
 
 By following these guidelines, you can efficiently edit Markdown documents while minimizing token usage and maintaining document structure integrity.
