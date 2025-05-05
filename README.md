@@ -87,6 +87,10 @@ cp -r ~/Downloads/CodeCRISPR ~/path/to/your/mcp/directory/CC
 python3 CC/tools/completion.py
 ```
 
+### Backup Your Files
+
+- CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR
+
 ### Basic Usage
 
 #### Inspect a File
@@ -266,6 +270,10 @@ Modified MIT License - See [LICENSE](LICENSE) file for details
 CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particularly with Anthropic's Claude via the Model Context Protocol (MCP). The framework demonstrates how targeted code editing can dramatically reduce token usage while improving reliability.
 
 ## Troubleshooting
+
+### Backup Your Files
+
+- CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and MCP, but please back up your files before working on them with CodeCRISPR
 
 ### Common Issues
 
