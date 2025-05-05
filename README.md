@@ -71,7 +71,7 @@ Consider a 1,000-line file with 10 functions to update:
 
 ### Installation
 
-1a. Download and unzip the CodeCRISPR.zip file, 
+1a. Download and unzip the [CodeCRISPR.zip file](zip/CodeCRISPR.zip), 
 
 OR
 
