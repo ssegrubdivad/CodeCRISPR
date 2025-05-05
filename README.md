@@ -97,7 +97,8 @@ python3 CC/tools/completion.py
 
 ### Backup Your Files
 
-CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR
+> ⚠️ **Warning**
+> CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.
 
 ### Basic Usage
 
