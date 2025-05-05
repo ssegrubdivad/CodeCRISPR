@@ -32,7 +32,7 @@ cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 ```
 or
 ```bash
-cp -r ~/Downloads/codecripr_package ~/path/to/your/mcp/directory/CC
+cp -r ~/Downloads/codecrispr_package ~/path/to/your/mcp/directory/CC
 ```
 2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
 
