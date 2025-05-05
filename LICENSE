@@ -1,7 +1,9 @@
 Modified MIT License
 
-Copyright (c) 2025 David Burgess, University of Saskatchewan, with acknowledgement
-(and equal parts frustration) attributed to Anthropic's Claude 3.7 Sonnet.
+Copyright (c) 2025 David Burgess, University of Saskatchewan 
+
+... with acknowledgement (and equal parts frustration) attributed to Anthropic's 
+Claude 3.7 Sonnet.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -18,26 +20,26 @@ from the use of this Software must include a citation analogous to the following
 
 AMA:
 
-Burgess, D. CodeCRISPR [Computer software]. Version 0.1.0. Saskatoon, Canada: 
+Burgess, D. CodeCRISPR [Computer software]. Version 1.2.1. Saskatoon, Canada: 
 University of Saskatchewan; 2025.
 
 APA:
 
-Burgess, D. (2025). CodeCRISPR (0.1.0) [Computer software]. University of 
+Burgess, D. (2025). CodeCRISPR (1.2.1) [Computer software]. University of 
 Saskatchewan. http://github.com/ssegrubdivad/codecrispr
 
 Chicago:
 
-Burgess, David. CodeCRISPR. V. 0.1.0. University of Saskatchewan. Python. 2025.
+Burgess, David. CodeCRISPR. V. 1.2.1. University of Saskatchewan. Python. 2025.
 
 Harvard:
 
-Burgess, D. (2025) CodeCRISPR (Version 0.1.0) [Computer program]. University of 
+Burgess, D. (2025) CodeCRISPR (Version 1.2.1) [Computer program]. University of 
 Saskatchewan, Saskatoon, Canada.
 
 MLA:
 
-Burgess, David. CodeCRISPR. Version 0.1.0, University of Saskatchewan, 4 May 
+Burgess, David. CodeCRISPR. Version 1.2.1, University of Saskatchewan, 4 May 
 2025.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
