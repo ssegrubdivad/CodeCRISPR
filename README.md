@@ -67,16 +67,17 @@ Consider a 1,000-line file with 10 functions to update:
 
 ### Installation
 
-1. Download and unzip the codecrispr_package.zip file.
-
-2. Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  For example:
+1. a. Download and unzip the CodeCRISPR.zip file.
+or
+1. b. Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  
+For example:
 
 ```bash
 cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 ```
 or
 ```bash
-cp -r ~/Downloads/codecrispr_package ~/path/to/your/mcp/directory/CC
+cp -r ~/Downloads/CodeCRISPR ~/path/to/your/mcp/directory/CC
 ```
 2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
 
@@ -164,20 +165,22 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 ## Supported Languages
 
 | Language | File Extensions | Parser Type |
-|----------|----------------|-------------|
-| Python | .py, .pyw, .pyi | Indentation-based |
-| JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
-| TypeScript | .ts, .tsx | Pattern-based |
-| HTML | .html, .htm | Tag-based |
-| CSS | .css, .scss, .less | Block-based |
-| PHP | .php, .php3-5, .phtml | Pattern-based |
-| Rust | .rs | Pattern-based |
+|----------|-----------------|-------------|
 | C++ | .cpp, .cxx, .cc, .h, .hpp | Pattern-based |
-| R | .r, .R | Pattern-based |
-| MATLAB | .m | Pattern-based |
+| CSS | .css, .scss, .less | Block-based |
+| Go | .go | Pattern-based |
+| HTML | .html, .htm | Tag-based |
+| JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
 | LaTeX | .tex | Environment-based |
-| SPSS | .sps, .spss | Block-based |
 | Markdown | .md | Heading-based |
+| MATLAB | .m | Pattern-based     |
+| PHP | .php, .php3-5, .phtml | Pattern-based |
+| Python | .py, .pyw, .pyi | Indentation-based |
+| R | .r, .R | Pattern-based |
+| Rust | .rs | Pattern-based |
+| SPSS | .sps, .spss | Block-based |
+| Swift | .swift | Pattern-based |
+| TypeScript | .ts, .tsx | Pattern-based |
 
 ## Configuration Options
 
@@ -279,7 +282,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 
 ## Roadmap
 
-- [ ] Add support for more languages (Go, Swift, Kotlin)
+- [ ] Add support for more languages
 - [ ] Implement semantic code analysis
 - [ ] Add Git integration for automatic commits
 - [ ] Create VS Code extension
@@ -288,6 +291,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 
 ## Version History
 
+- **1.2.2** - Added support for go and swift editing with go_tool.py and swift_tool.py
 - **1.2.1** - Added support for markdown editing with markdown_tool.py
 - **1.2.0** - Added batch operations, JSON output, configuration support
 - **1.1.0** - Enhanced language parsers for modern syntax
