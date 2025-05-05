@@ -291,7 +291,7 @@ Each language tool implements the `CodeCRISPR` class with required methods for p
 
 ## Recent Updates
 
-- Added support for Markdown documents with heading-based section editing
+- Added support for additional langauges, including Markdown documents with heading-based section editing
 - Enhanced token efficiency guidelines for AI assistants
 - Enhanced error handling with file validation
 - Added JSON output format for better integration
