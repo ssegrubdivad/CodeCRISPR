@@ -71,7 +71,7 @@ Consider a 1,000-line file with 10 functions to update:
 
 OR
 
-1b. Clone or copy the CodeCRISPR directory to your local `~/path/to/your/mcp/directory/`; maybe you call this `ClaudeMCP` directory.  
+1b. Clone or copy the CodeCRISPR directory to your local `~/path/to/your/mcp/directory/`; maybe you call this directory `ClaudeMCP`.  
 
 For example:
 
