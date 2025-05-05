@@ -8,6 +8,9 @@ CodeCRISPR is a lightweight, language-agnostic framework that enables precise, t
 </p>
 
 See the [narrative overview of CodeCRISPR](docs/guides/narrative_overview.md) for a comprehensive explanation.
+<p>
+&nbsp;
+</p>
 
 ## A Token Efficiency Advantage
 
