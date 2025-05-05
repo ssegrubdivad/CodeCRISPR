@@ -95,6 +95,19 @@ cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 python3 CC/tools/completion.py
 ```
 
+4. Provide Instructions to Claude via Settings → Profile → Personal Preferences:
+
+```text
+# AI Instructions for CodeCRISPR Usage via MCP
+
+## Priority Directive: Token Efficiency
+
+When working with code files through MCP, **ALWAYS** use the CodeCRISPR framework located at `/CC/codecrispr.py` in the user's Claude MCP directory. This tool dramatically reduces token consumption by avoiding repeated full-file reads.
+
+ENSURE YOU READ AND FOLLOW THE INSTRUCTIONS FOR AI USING CodeCRISPR found at the following path via the MCP server:
+`/CC/docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md`
+```
+
 ### Backup Your Files
 
 > ⚠️ **Warning**
