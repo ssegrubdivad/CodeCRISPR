@@ -1,4 +1,4 @@
-# A Comprehensive Narrative explanation of CodeCRISPR, for those who like to read.
+# A Comprehensive Narrative Explanation of CodeCRISPR, for Those Who Like to Read.
 
 ## What CodeCRISPR Does and Why It's Valuable
 
