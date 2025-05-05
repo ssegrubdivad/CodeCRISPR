@@ -22,7 +22,7 @@ When working with AI assistants like Claude, you have a limited number of tokens
 **With CodeCRISPR:**
 - Claude inspects file once (builds a map)
 - Subsequent changes use the map (minimal tokens)
-- Only changed content is transmitted
+- Only changed content is transmitted (minimal tokens)
 - Multiple operations = Single inspection + efficient updates
 
 ### The "Inspect Once, Edit Many" Pattern
