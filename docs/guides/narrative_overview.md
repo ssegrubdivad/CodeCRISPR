@@ -26,7 +26,7 @@ Think of it this way: if AST parsing is like creating a detailed anatomical diag
 
 This lightweight nature is particularly beneficial when working with Claude because it minimizes the computational overhead on both ends. Claude doesn't need to process complex tree structures or maintain detailed syntax information - it simply needs to know the boundaries of the code sections it's working with. This efficiency translates directly into faster response times and lower token usage.
 
-## The Value Proposition for Claude Users
+## The Value for Claude Users
 
 The combination of CodeCRISPR with Claude's Desktop App and MCP creates a development environment that fundamentally changes the economics and ergonomics of AI-assisted coding. Instead of treating each file modification as a complete rewrite operation, CodeCRISPR enables incremental, targeted updates that mirror how human developers actually work.
 
