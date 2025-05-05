@@ -1,6 +1,6 @@
 # CodeCRISPR: Precise Code Editing Framework
 
-<img src="docs/images/cc.png" align="right" width="200" style="margin-left: 20px;">
+<img src="docs/images/cc.png" align="right" width="250" style="margin-left: 20px;">
 <p>
 Save your tokens with CodeCRISPR and MCP in Claude Desktop. 
 <br /><br />
