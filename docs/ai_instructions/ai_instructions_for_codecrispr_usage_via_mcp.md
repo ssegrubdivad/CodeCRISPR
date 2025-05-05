@@ -83,19 +83,21 @@ cd /Users/$USER/path/to/your/mcp/directory && python3 CC/codecrispr.py <filepath
 ## Supported File Types
 
 CodeCRISPR automatically detects language by extension:
-- Python (.py, .pyw, .pyi)
-- JavaScript (.js, .mjs, .cjs, .jsx)
-- TypeScript (.ts, .tsx)
-- HTML (.html, .htm)
-- CSS (.css, .scss, .less)
-- PHP (.php, .php3-5, .phtml)
-- Rust (.rs)
 - C++ (.cpp, .cxx, .cc, .h, .hpp)
-- R (.r, .R)
-- MATLAB (.m)
+- CSS (.css, .scss, .less)
+- Go (.go)
+- HTML (.html, .htm)
+- JavaScript (.js, .mjs, .cjs, .jsx)
 - LaTeX (.tex)
-- SPSS (.sps, .spss)
 - Markdown (.md)
+- MATLAB (.m)
+- PHP (.php, .php3-5, .phtml)
+- Python (.py, .pyw, .pyi)
+- R (.r, .R)
+- Rust (.rs)
+- SPSS (.sps, .spss)
+- Swift (.swift)
+- TypeScript (.ts, .tsx)
 
 ## Configuration Management
 
