@@ -31,7 +31,7 @@ When working with AI assistants like Claude, you have a limited number of tokens
 
 ### The "Inspect Once, Edit Many" Pattern
 
-```python
+```text
 # Inefficient (what to avoid):
 # For each edit: inspect → preview → edit → verify
 # Uses approximately 4x the tokens per edit
@@ -95,7 +95,7 @@ cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 python3 CC/tools/completion.py
 ```
 
-4. Provide Instructions to Claude via Settings → Profile → Personal Preferences:
+4. Provide Instructions to Claude via `Settings → Profile → Personal Preferences`:
 
 ```text
 # AI Instructions for CodeCRISPR Usage via MCP
