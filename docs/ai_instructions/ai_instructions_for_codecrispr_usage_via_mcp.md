@@ -87,7 +87,10 @@ CodeCRISPR automatically detects language by extension:
 - CSS (.css, .scss, .less)
 - Go (.go)
 - HTML (.html, .htm)
+- Java (.java)
 - JavaScript (.js, .mjs, .cjs, .jsx)
+- JSON (.json)
+- Julia (.jl)
 - LaTeX (.tex)
 - Markdown (.md)
 - MATLAB (.m)
@@ -95,9 +98,13 @@ CodeCRISPR automatically detects language by extension:
 - Python (.py, .pyw, .pyi)
 - R (.r, .R)
 - Rust (.rs)
+- Shell (.sh, .bash)
 - SPSS (.sps, .spss)
+- SQL (.sql)
+- SVG (.svg)
 - Swift (.swift)
 - TypeScript (.ts, .tsx)
+- XML (.xml)
 
 ## Configuration Management
 
