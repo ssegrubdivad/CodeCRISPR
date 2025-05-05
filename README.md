@@ -167,7 +167,9 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 - [Novice User Guide](docs/guides/novice_user_guide.md) - Friendly introduction for new users
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
 - Language Specific Guides
-- - [Markdown Tool Guide](docs/guides/markdown_tool_guide.md) - Specialized guide for working with Markdown documents
+  - [Go Tool Guide](docs/tool_guides/go_tool_guide.md)
+  - [Markdown Tool Guide](docs/tool_guides/markdown_tool_guide.md)
+  - [Swift Tool Guide](docs/tool_guides/swift_tool_guide.md)
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
 ## Supported Languages
