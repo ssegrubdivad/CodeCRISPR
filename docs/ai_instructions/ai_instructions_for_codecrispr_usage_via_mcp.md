@@ -95,6 +95,7 @@ CodeCRISPR automatically detects language by extension:
 - MATLAB (.m)
 - LaTeX (.tex)
 - SPSS (.sps, .spss)
+- Markdown (.md)
 
 ## Configuration Management
 
@@ -333,5 +334,49 @@ CodeCRISPR works alongside other MCP file operations:
 5. **BATCH** related edits for maximum efficiency
 6. **USE** configuration to customize behavior
 7. **LEVERAGE** JSON output for tool integration
+
+## Token-Efficient Implementation Guidelines
+
+Follow these guidelines to make more token-efficient choices when using CodeCRISPR:
+
+1. **Explicit CodeCRISPR Directive**: When modifying entire methods or functions, always use CodeCRISPR's direct method replacement rather than edit_block. Only use edit_block for partial file changes that don't correspond to complete methods.
+
+2. **Function Boundary Awareness**: Be aware that CodeCRISPR can accurately identify function boundaries. When you need to modify a function, trust CodeCRISPR to correctly replace only that function without needing to specify the exact start and end lines.
+
+3. **Tool Selection Hierarchy**: Follow this hierarchy for file modifications: 
+   - For copying existing files: Use the cp command
+   - For modifying entire functions: Use CodeCRISPR method replacement
+   - For targeted, non-function edits: Use edit_block
+   - For creating new files: Use write_file
+
+4. **Batch Operations Guidance**: When multiple functions need to be modified, consider using CodeCRISPR's batch operation capability rather than making multiple individual edits.
+
+## Markdown Tool Usage
+
+The Markdown tool extends CodeCRISPR's capabilities to efficiently edit markdown documents by sections. It recognizes markdown heading structures (using # syntax) and allows precise replacement of entire sections.
+
+### Markdown-Specific Features
+
+- **Section-Based Editing**: Replace entire sections (heading + content) with a single operation
+- **Heading Hierarchy Awareness**: Understands the document structure based on heading levels (# vs ## vs ###)
+- **Preservation of Document Structure**: Maintains the overall document organization while updating specific sections
+
+### Example Markdown Workflow
+
+```bash
+# Inspect markdown document structure
+cd /Users/$USER/path/to/your/mcp/directory && python3 CC/codecrispr.py documentation.md --inspect
+
+# Replace a specific section
+cd /Users/$USER/path/to/your/mcp/directory && python3 CC/codecrispr.py documentation.md "Installation Guide" '## Installation Guide
+
+Follow these steps to install the application:
+
+1. Download the latest release
+2. Extract the files to your desired location
+3. Run the setup script
+4. Configure your settings
+'
+```
 
 By following these instructions, you'll achieve 80-95% token savings on typical code editing tasks while maintaining precision and reliability.

@@ -47,7 +47,8 @@ LANGUAGE_MAP = {
     '.m': 'matlab_tool',
     '.tex': 'latex_tool',
     '.sps': 'spss_tool',
-    '.spss': 'spss_tool'
+    '.spss': 'spss_tool',
+    '.md': 'markdown_tool'
 }
 
 DEFAULT_CONFIG = {

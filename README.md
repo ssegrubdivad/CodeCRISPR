@@ -5,7 +5,7 @@ CodeCRISPR is a lightweight, language-agnostic framework that enables precise, t
 ## Key Features
 
 - **Surgical Precision**: Edit specific functions or code blocks without rewriting entire files
-- **Language Agnostic**: Supports Python, JavaScript, TypeScript, HTML, CSS, PHP, Rust, C++, R, MATLAB, LaTeX, and SPSS
+- **Language Agnostic**: Supports Python, JavaScript, TypeScript, HTML, CSS, PHP, Rust, C++, R, MATLAB, LaTeX, SPSS, and Markdown
 - **Zero Dependencies**: Pure Python implementation using only standard library
 - **LLM Optimized**: Designed for efficient use with Claude and other LLMs via MCP
 - **Performance Focused**: Single-parse efficiency with minimal memory overhead
@@ -57,6 +57,15 @@ python3 CC/codecrispr.py yourfile.py function_name 'new code here'
 python3 CC/codecrispr.py yourfile.py --inspect --preview function_name
 ```
 
+#### Edit a Markdown Section
+
+```bash
+python3 CC/codecrispr.py documentation.md "Installation Guide" '## Installation Guide
+
+Updated installation instructions here.
+'
+```
+
 ### Advanced Usage
 
 #### JSON Output
@@ -99,6 +108,8 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 
 - [Novice User Guide](docs/guides/novice_user_guide.md) - Friendly introduction for new users
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
+- [Markdown Tool Guide](docs/guides/markdown_tool_guide.md) - Specialized guide for working with Markdown documents
+- [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
 ## Supported Languages
 
@@ -116,6 +127,7 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 | MATLAB | .m | Pattern-based |
 | LaTeX | .tex | Environment-based |
 | SPSS | .sps, .spss | Block-based |
+| Markdown | .md | Heading-based |
 
 ## Configuration Options
 
@@ -152,6 +164,8 @@ Each language tool implements the `CodeCRISPR` class with required methods for p
 
 ## Recent Updates
 
+- Added support for Markdown documents with heading-based section editing
+- Enhanced token efficiency guidelines for AI assistants
 - Enhanced error handling with file validation
 - Added JSON output format for better integration
 - Implemented batch operations for multiple edits
@@ -174,6 +188,7 @@ See the [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) for 
 
 - **LLM-Assisted Development**: Efficient code modifications with Claude
 - **Targeted Refactoring**: Update specific functions without full-file rewrites
+- **Documentation Management**: Edit markdown document sections by headings
 - **Code Review**: Extract and examine specific code blocks
 - **Automated Code Updates**: Programmatic code modifications
 - **CI/CD Integration**: JSON output enables seamless toolchain integration
@@ -226,4 +241,3 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 - **1.2.0** - Added batch operations, JSON output, configuration support
 - **1.1.0** - Enhanced language parsers for modern syntax
 - **1.0.0** - Initial release with core functionality
-
