@@ -174,10 +174,19 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
 - [Customization Guide](docs/guides/customization.md) - Information about cutomizing via the INI file
 - Language Specific Guides
+  - [C++ Tool Guide](docs/tool_guides/cpp_tool_guide.md)
+  - [CSS Tool Guide](docs/tool_guides/css_tool_guide.md)
   - [Go Tool Guide](docs/tool_guides/go_tool_guide.md)
+  - [HTML Tool Guide](docs/tool_guides/html_tool_guide.md)
   - [JavaScript Tool Guide](docs/tool_guides/javascript_tool_guide.md)
+  - [LaTeX Tool Guide](docs/tool_guides/latex_tool_guide.md)
   - [Markdown Tool Guide](docs/tool_guides/markdown_tool_guide.md)
+  - [MATLAB Tool Guide](docs/tool_guides/matlab_tool_guide.md)
+  - [PHP Tool Guide](docs/tool_guides/php_tool_guide.md)
   - [Python Tool Guide](docs/tool_guides/python_tool_guide.md)
+  - [R Tool Guide](docs/tool_guides/r_tool_guide.md)
+  - [Rust Tool Guide](docs/tool_guides/rust_tool_guide.md)
+  - [SPSS Tool Guide](docs/tool_guides/spss_tool_guide.md)
   - [Swift Tool Guide](docs/tool_guides/swift_tool_guide.md)
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
