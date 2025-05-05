@@ -23,12 +23,17 @@ CodeCRISPR is a lightweight, language-agnostic framework that enables precise, t
 
 ### Installation
 
-1. Clone or copy the CodeCRISPR directory to your `ClaudeMCP` directory:
+1. Download and unzip the codecrispr_package.zip file.
+
+2. Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  For example:
 
 ```bash
-cp -r /path/to/codecrispr ~/ClaudeMCP/CC
+cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 ```
-
+or
+```bash
+cp -r ~/Downloads/codecripr_package ~/path/to/your/mcp/directory/CC
+```
 2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
 
 3. (Optional) Install shell completions:
@@ -108,7 +113,8 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 
 - [Novice User Guide](docs/guides/novice_user_guide.md) - Friendly introduction for new users
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
-- [Markdown Tool Guide](docs/guides/markdown_tool_guide.md) - Specialized guide for working with Markdown documents
+- Language Specific Guides
+- - [Markdown Tool Guide](docs/guides/markdown_tool_guide.md) - Specialized guide for working with Markdown documents
 - [AI Instructions for CodeCRISPR](docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md) - Guide for AI assistants using CodeCRISPR
 
 ## Supported Languages
@@ -238,6 +244,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 
 ## Version History
 
+- **1.2.1** - Added support for markdown editing with markdown_tool.py
 - **1.2.0** - Added batch operations, JSON output, configuration support
 - **1.1.0** - Enhanced language parsers for modern syntax
 - **1.0.0** - Initial release with core functionality
