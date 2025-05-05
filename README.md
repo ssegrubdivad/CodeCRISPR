@@ -270,7 +270,7 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 | editor | use_spaces | true | Use spaces instead of tabs |
 | editor | trim_trailing_whitespace | true | Remove trailing whitespace |
 
-## Architecture
+## Expected Architecture
 
 CodeCRISPR uses a modular architecture with language-specific parsers:
 
