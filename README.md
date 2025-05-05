@@ -234,11 +234,11 @@ CC/
 ├── tools/                  # Language-specific parsers
 │   ├── python_tool.py
 │   ├── javascript_tool.py
-│   ├── completion.py      # Shell completion scripts
+│   ├── completion.py       # Shell completion scripts
 │   └── ...
 └── docs/                   # Documentation
     ├── guides/
-    └── examples/          # Example files
+    └── examples/           # Example files
 ```
 
 Each language tool implements the `CodeCRISPR` class with required methods for parsing and code replacement.
