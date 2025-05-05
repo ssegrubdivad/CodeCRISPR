@@ -243,6 +243,7 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 | Rust | .rs | Pattern-based |
 | Shell Scripts | .sh, .bash | Block-based |
 | SPSS | .sps, .spss | Block-based |
+| SQL | .sql | Pattern-based |
 | Swift | .swift | Pattern-based |
 | TypeScript | .ts, .tsx | Pattern-based |
 | XML | .xml | Tag-based |
