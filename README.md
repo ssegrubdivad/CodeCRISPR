@@ -167,6 +167,19 @@ python3 CC/codecrispr.py --config general.backup_enabled=false
 
 Configuration file is stored at `~/.codecrispr/config.ini`
 
+## But Why No Just Use an AST?
+
+While Abstract Syntax Trees (AST) provide a powerful and precise way to understand and manipulate code, CodeCRISPR remains a valuable tool for several reasons:
+1.  **Broad Compatibility**: CodeCRISPR supports a wide range of languages and file types on its own, including those for which AST tooling might not be readily available or practical. This ensures that developers can still efficiently edit and manage their code across different technologies.
+2.  **Lightweight and Flexible**: CodeCRISPR operates in a lightweight manner, making it easy to integrate into various environments. It can function independently or alongside AST tools, providing a fallback or complementary solution when AST parsing is not feasible or necessary.
+3.  **Efficiency for Simple Tasks**: For many straightforward editing tasks, CodeCRISPR offers a streamlined and easy-to-use interface. Users can make quick changes without the overhead of AST processing, which can be beneficial for smaller or less complex codebases.
+4.  **Efficiency for Polyglot Projects**: It may be the case that your project includes files written in several languages.  Each language requires the installation of its own respective AST application.  However, CodeCRISPR is designed to work seamlessly with projects that use multiple languages.
+5.  **Extensibility**: CodeCRISPR is designed to be very extensible.  Don't see the language you use in the existing tools?  Tell us, or build your own tool and contribute it to the CodeCRISPR community.
+6.  **Token Management**: Even with AST, there are scenarios where CodeCRISPR’s token-efficient design is advantageous. It reduces the token footprint by focusing on targeted, section-based edits, which is crucial in token-limited environments.
+7.  **Ease of Use for Non-Technical Users**: CodeCRISPR is designed to be intuitive, making it accessible for users who may not be familiar with the intricacies of ASTs. This ensures that a broader range of users can benefit from its capabilities.
+
+CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficient, and user-friendly solution that remains valuable even when advanced AST tools are available, ensuring that developers have the right tool for every situation.
+
 ## Documentation
 
 - [A Comprehensive Explanation of CodeCRISPR](docs/guides/narrative_overview.md) - A detailed narrative overview of all that is CodeCRiSPER, for those who like to read
