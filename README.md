@@ -224,7 +224,10 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 | CSS | .css, .scss, .less | Block-based |
 | Go | .go | Pattern-based |
 | HTML | .html, .htm | Tag-based |
+| Java | .java | Pattern-based |
 | JavaScript | .js, .mjs, .cjs, .jsx | Pattern-based |
+| JSON | .json | Named-key-based |
+| Julia | .jl | Pattern-based |
 | LaTeX | .tex | Environment-based |
 | Markdown | .md | Heading-based |
 | MATLAB | .m | Pattern-based     |
@@ -232,9 +235,11 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 | Python | .py, .pyw, .pyi | Indentation-based |
 | R | .r, .R | Pattern-based |
 | Rust | .rs | Pattern-based |
+| Shell Scripts | .sh, .bash | Block-based |
 | SPSS | .sps, .spss | Block-based |
 | Swift | .swift | Pattern-based |
 | TypeScript | .ts, .tsx | Pattern-based |
+| XML | .xml | Tag-based |
 
 ## Configuration Options
 
@@ -350,6 +355,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 
 ## Version History
 
+- **1.2.3** - Added support for SQL, Julia, shell scripts, JSON, XML, and Java editing with respective tools.
 - **1.2.2** - Added support for go and swift editing with go_tool.py and swift_tool.py
 - **1.2.1** - Added support for markdown editing with markdown_tool.py
 - **1.2.0** - Added batch operations, JSON output, configuration support
