@@ -289,7 +289,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 ### Backup Your Files
 
 > ⚠️ **Warning**: 
-> CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.
+> > CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.
 
 ### Common Issues
 
