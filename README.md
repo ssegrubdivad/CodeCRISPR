@@ -111,7 +111,7 @@ ENSURE YOU READ AND FOLLOW THE INSTRUCTIONS FOR AI USING CodeCRISPR found at the
 ### Backup Your Files
 
 > ⚠️ **Warning**
-> > CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.  CodeCRISPR IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+> > CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.  CodeCRISPR IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. As a built-in feature, if `backup_enabled` is set to its default of `true` and multiple updates are applied to the same file, CodeCRISPR will create sequentially numbered `.bak` files to avoid overwriting previous backups. Nevertheless, please backup your own files.
 
 ### Basic Usage
 
@@ -344,7 +344,7 @@ CodeCRISPR was designed to optimize LLM-assisted code editing workflows, particu
 ### Backup Your Files
 
 > ⚠️ **Warning**
-> > CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.  CodeCRISPR IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+> > CodeCRISPR has been very successful when used in conjunction with the Claude Desktop app for MacOS and the Model Context Protocol (MCP), but please back up your files before working on them with CodeCRISPR.  CodeCRISPR IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. As a built-in feature, if `backup_enabled` is set to its default of `true` and multiple updates are applied to the same file, CodeCRISPR will create sequentially numbered `.bak` files to avoid overwriting previous backups. Nevertheless, please backup your own files.
 
 ### Common Issues
 
