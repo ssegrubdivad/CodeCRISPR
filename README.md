@@ -167,7 +167,7 @@ python3 CC/codecrispr.py --config general.backup_enabled=false
 
 Configuration file is stored at `~/.codecrispr/config.ini`
 
-## But Why No Just Use an AST?
+## But Why Not Just Use an AST?
 
 While Abstract Syntax Trees (AST) provide a powerful and precise way to understand and manipulate code, CodeCRISPR remains a valuable tool for several reasons:
 1.  **Broad Compatibility**: CodeCRISPR supports a wide range of languages and file types on its own, including those for which AST tooling might not be readily available or practical. This ensures that developers can still efficiently edit and manage their code across different technologies.
