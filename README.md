@@ -251,7 +251,7 @@ CodeCRISPR and AST complement each other. CodeCRISPR offers a flexible, efficien
 - Pattern-based refers to tools that use regular expressions to identify function or method patterns (e.g., Java, Rust, Go).
 - Block-based is used for languages where logical units are enclosed in braces or similar delimiters without formal declaration syntax (e.g., CSS, Shell, SPSS).
 - Tag-based fits languages like HTML and XML that rely on nested, named tag structures.
-- Named-key-based (for JSON) reflects hierarchical object/array traversal via named keys.
+- Named-key-based (JSON) reflects hierarchical object/array traversal via named keys.
 - Environment-based (LaTeX) uses \\begin{...} and \\end{...} to delimit sections.
 - Heading-based (Markdown) uses section titles with # symbols.
 - Indentation-based (Python) depends on whitespace to define scope.
