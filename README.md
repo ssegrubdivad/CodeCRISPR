@@ -1,6 +1,50 @@
 # CodeCRISPR: Precise Code Editing Framework
 
-CodeCRISPR is a lightweight, language-agnostic framework that enables precise, targeted code modifications optimized for LLM-assisted development workflows. Like its biological namesake, CodeCRISPR allows for surgical edits to specific functions or code blocks without touching the rest of your codebase.
+Save your tokens with CodeCRISPR and MCP in Claude Desktop. 
+
+CodeCRISPR is a lightweight, language-agnostic framework that enables precise, targeted code modifications optimized for LLM-assisted development workflows. Like its biological namesake, CodeCRISPR allows for surgical edits to specific functions or code blocks without touching the rest of your codebase and without repeated token waste.
+
+## A Token Efficiency Advantage
+
+### Why Every Token Matters
+
+When working with AI assistants like Claude, you have a limited number of tokens (think of them as conversation credits) per session. CodeCRISPR is specifically designed to maximize the value of every token you spend.
+
+### Traditional Approach vs. CodeCRISPR Efficiency
+
+**Without CodeCRISPR:**
+- Claude reads entire file (uses tokens)
+- You ask for a change
+- Claude reads entire file again to make changes (uses more tokens)
+- Claude rewrites the entire file
+- Multiple operations = Multiple full file reads
+
+**With CodeCRISPR:**
+- Claude inspects file once (builds a map)
+- Subsequent changes use the map (minimal tokens)
+- Only changed content is transmitted
+- Multiple operations = Single inspection + efficient updates
+
+### The "Inspect Once, Edit Many" Pattern
+
+```python
+# Inefficient (what to avoid):
+# For each edit: inspect → preview → edit → verify
+# Uses approximately 4x the tokens per edit
+
+# Efficient (recommended):
+# First: One inspection of the file
+# Then: Direct edits using the reference map
+# Result: 75%+ token savings on subsequent edits
+```
+
+### Real Token Savings Example
+
+Consider a 1,000-line file with 10 functions to update:
+
+- Traditional approach: ~10,000 tokens (read entire file 10 times)
+- CodeCRISPR approach: ~1,500 tokens (read once, update 10 functions)
+- **Savings: 85% fewer tokens used!**
 
 ## Key Features
 
