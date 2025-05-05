@@ -71,7 +71,7 @@ Consider a 1,000-line file with 10 functions to update:
 
 OR
 
-1b. Clone or copy the CodeCRISPR directory to your local `ClaudeMCP` directory.  
+1b. Clone or copy the CodeCRISPR directory to your local `~/path/to/your/mcp/directory/`; maybe you call this `ClaudeMCP` directory.  
 
 For example:
 
@@ -83,7 +83,7 @@ OR
 cp -r /path/to/codecrispr ~/path/to/your/mcp/directory/CC
 ```
 
-2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP`.
+2. Configure Claude Desktop to allow MCP access to your `ClaudeMCP` directory.
 
 3. (Optional) Install shell completions:
 
