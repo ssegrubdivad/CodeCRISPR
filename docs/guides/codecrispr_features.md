@@ -203,11 +203,11 @@ This confirms the replacement and shows what changed.
   "updates": [
     {
       "method": "add",
-      "code": "def add(a, b):\\n    return a * b"
+      "code": "def add(a, b):\n    return a * b"
     },
     {
       "method": "multiply",
-      "code": "def multiply(a, b):\\n    return a + b"
+      "code": "def multiply(a, b):\n    return a + b"
     }
   ]
 }
