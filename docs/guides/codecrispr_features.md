@@ -120,3 +120,146 @@ CodeCRISPR was designed with **AI-agent workflows** in mind:
 ## Summary
 
 CodeCRISPR empowers human users and AI agents to work efficiently with large files, focusing on precise, token-efficient, targeted edits. It acts as a language-agnostic surgical editor that integrates smoothly into Claude workflows through MCP or direct local CLI use.
+
+---
+
+## Usage Examples
+
+Below are practical examples of how each major feature of CodeCRISPR is used, including the exact commands and typical outputs.
+
+---
+
+### 1. Inspecting a File for Function Names
+
+**Command:**
+
+```bash
+python3 codecrispr.py math_utils.py --inspect
+```
+
+**Output:**
+
+```
+Inspecting 'math_utils.py' [python_tool]:
+  - add: lines 3–6
+  - subtract: lines 8–11
+  - multiply: lines 13–18
+```
+
+This tells you that three functions are found in the file, with the exact line ranges.
+
+---
+
+### 2. Previewing a Function's Content
+
+**Command:**
+
+```bash
+python3 codecrispr.py math_utils.py --inspect --preview "add"
+```
+
+**Output:**
+
+```python
+def add(a, b):
+    return a + b
+```
+
+This extracts and shows the content of the `add` function without printing the rest of the file.
+
+---
+
+### 3. Replacing a Function with New Code
+
+**Command:**
+
+```bash
+python3 codecrispr.py math_utils.py "add" "def add(a, b):
+    return a - b"
+```
+
+**Output (diff):**
+
+```
+--- math_utils.py
++++ math_utils.py
+@@ -3,2 +3,2 @@ add
+-def add(a, b):
+-    return a + b
++def add(a, b):
++    return a - b
+```
+
+This confirms the replacement and shows what changed.
+
+---
+
+### 4. Performing a Batch Update
+
+**Batch File (`updates.json`):**
+
+```json
+{
+  "updates": [
+    { "method": "add", "code": "def add(a, b):
+    return a * b" },
+    { "method": "multiply", "code": "def multiply(a, b):
+    return a + b" }
+  ]
+}
+```
+
+**Command:**
+
+```bash
+python3 codecrispr.py math_utils.py --batch updates.json
+```
+
+**Output:**
+
+```
+Updated method: add
+Updated method: multiply
+```
+
+---
+
+### 5. Creating and Using Backups
+
+If backups are enabled (`backup_enabled = true`), a file like `math_utils.py.bak` is created before any change. If a backup already exists, it creates `math_utils.py.bak1`, `math_utils.py.bak2`, etc.
+
+This protects your original file from accidental overwrites.
+
+---
+
+### 6. Error Handling Example
+
+**Command:**
+
+```bash
+python3 codecrispr.py math_utils.py "nonexistent" "def f(): pass"
+```
+
+**Output:**
+
+```
+ERROR: Function 'nonexistent' not found.
+```
+
+This prevents unintended modifications and provides a clear, machine-readable error.
+
+---
+
+### 7. Performance in Large Files
+
+For files with 10,000+ lines, you can still run:
+
+```bash
+python3 codecrispr.py large_file.py --inspect
+```
+
+The result will return the reference map within milliseconds, allowing Claude or a user to continue working without delay.
+
+---
+
+This section demonstrates how CodeCRISPR operations look and behave in real usage, helping both humans and AI agents to interact confidently with the system.
