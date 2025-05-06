@@ -177,11 +177,58 @@ Consider updating 3 sections in a 1000-line markdown document:
 
 ## Markdown Tool Limitations
 
-The Markdown Tool is designed for reliability and efficiency across most well-structured Markdown documents. However, users should be aware of certain inherent limitations based on the nature of the Markdown format and the tool’s lightweight parsing strategy:
+The Markdown Tool is designed for reliability and efficiency across most well-structured Markdown documents. However, users should be aware of certain inherent limitations based on the nature of the Markdown format and the tool's lightweight parsing strategy:
 
 - The tool does not attempt to build a full abstract syntax tree of the document, meaning that although it respects structural boundaries created by headings and ignores false headings inside fenced code blocks, it does not analyze deeper semantic relationships such as paragraphs inside blockquotes, nested list hierarchies, or inline elements with special formatting.
 - It cannot selectively modify content within a heading-defined section—such as changing a single bullet point or editing one paragraph—without replacing the entire block associated with that heading. This limitation is intrinsic to a system that works at the section level rather than at the fine-grained token level.
 - While the tool is now robust against misinterpreting headings that appear within fenced code blocks (e.g., within triple backtick regions), it may still behave unpredictably with documents that use unconventional structures—such as headings embedded in HTML, or documents that omit heading levels or reuse heading names multiple times.
+
+### Additional Limitations and Edge Cases
+
+- **Markdown inside HTML**: The tool will not detect or correctly parse headings that appear inside HTML blocks or custom components.
+- **Table Formatting**: When replacing sections containing tables, the table formatting must be precisely maintained to prevent rendering issues.
+- **Frontmatter**: YAML frontmatter is treated as part of the first section. When editing the first heading, include the frontmatter to avoid losing it.
+- **Non-standard Heading Formats**: Documents using Setext-style headings (underlined with === or ---) instead of ATX-style (#) may not be correctly parsed.
+- **Heading IDs**: Custom heading IDs (e.g., `## Heading {#custom-id}`) may interfere with heading detection in some cases.
+
+### Handling Edge Cases
+
+- For documents with HTML blocks containing headings, use `edit_block` instead of heading-based editing.
+- When working with frontmatter, always inspect the document structure first to understand section boundaries.
+- Convert Setext-style headings to ATX-style before editing for more reliable parsing.
+- Remove custom heading IDs temporarily if experiencing detection issues.
+
+### Example Edge Case: Frontmatter
+
+When editing a markdown document with frontmatter, always include the frontmatter when replacing the first section:
+
+```bash
+# Create a file with the new content including frontmatter
+cat > new_intro.md << 'EOF'
+---
+title: Document Title
+author: Author Name
+date: 2023-01-01
+---
+
+# Introduction
+
+Updated introduction content here.
+EOF
+
+# Use command substitution to pass the content
+python3 CC/codecrispr.py doc.md "Introduction" "$(cat new_intro.md)"
+```
+
+## General Troubleshooting Recommendations
+
+When encountering parsing issues with the Markdown tool:
+
+1. **Verify Document Structure**: Ensure the document uses standard Markdown heading structures.
+2. **Use Inspection First**: Always use `--inspect` to understand the document's section organization.
+3. **Check for Special Elements**: Be aware of special elements like frontmatter, HTML blocks, or custom extensions.
+4. **Consider Alternative Approaches**: For complex documents, `edit_block` might be more appropriate than section-based editing.
+5. **File-Based Input**: For sections with special characters or complex formatting, use the file-based input approach.
 
 For most documentation tasks—including changelogs, instructional material, API references, and structured project notes—the tool provides a safe and efficient editing model with significant advantages in clarity and token efficiency.
 

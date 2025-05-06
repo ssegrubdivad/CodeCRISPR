@@ -1,6 +1,6 @@
 import re
 
-class MethodEditor:
+class CodeCRISPR:
     def __init__(self, filepath):
         self.filepath = filepath
         self.lines = self._read_file()

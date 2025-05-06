@@ -1,15 +1,10 @@
 # CodeCRISPR: Precise Code Editing Framework
 
-<img src="docs/images/cc.png" align="right" width="250" style="margin-left: 30px;">
-
 Save your tokens with CodeCRISPR and MCP in Claude Desktop. 
 
 CodeCRISPR is a lightweight, language-agnostic framework that enables precise, targeted code modifications optimized for LLM-assisted development workflows. Like its biological namesake, CodeCRISPR allows for surgical edits to specific functions or code blocks without touching the rest of your codebase and without repeated token waste.
 
 See the [narrative overview of CodeCRISPR](docs/guides/narrative_overview.md) for a comprehensive explanation.
-<p>
-&nbsp;
-</p>
 
 ## A Token Efficiency Advantage
 
@@ -113,6 +108,8 @@ ENSURE YOU READ AND FOLLOW THE INSTRUCTIONS FOR AI USING CodeCRISPR found at the
 `/CC/docs/ai_instructions/ai_instructions_for_codecrispr_usage_via_mcp.md`
 ```
 
+5. For complex code with special characters, always use the file-based input approach as described in the [File-Based Input section](#file-based-input-the-recommended-approach-for-complex-code).
+
 ### Backup Your Files
 
 > ⚠️ **Warning**
@@ -140,7 +137,7 @@ python3 CC/codecrispr.py yourfile.py function_name 'new code here'
 python3 CC/codecrispr.py yourfile.py --inspect --preview function_name
 ```
 
-#### Edit a Markdown Section
+### Edit a Markdown Section
 
 ```bash
 python3 CC/codecrispr.py documentation.md "Installation Guide" '## Installation Guide
@@ -149,6 +146,44 @@ Updated installation instructions here.
 '
 ```
 
+## File-Based Input: The Recommended Approach for Complex Code
+
+When working with CodeCRISPR, handling complex code strings containing special characters (quotes, backslashes, dollar signs, etc.) can be challenging due to shell interpretation. Instead of struggling with escape sequences, use the file-based approach for greater reliability.
+
+### Why Use File-Based Input?
+
+1. **Avoid Shell Escaping Nightmares**: No need to worry about different shell escaping rules
+2. **Preserve Exact Formatting**: Line breaks, indentation, and whitespace remain intact
+3. **Support for Special Characters**: Easily handle quotes, dollars, backslashes, and other special characters
+4. **Cross-Platform Compatibility**: Works consistently across different shells and operating systems
+5. **Improved Readability**: Keep your code clean and readable without escape sequences
+
+### File-Based Input Example
+
+```bash
+# Instead of this complex escaping (UNRELIABLE):
+python3 CC/codecrispr.py file.js methodName 'const selector = element.querySelector("[id$=\\"value\\"]");'
+
+# Use this file-based approach (RELIABLE):
+cat > method_fix.js << 'EOF'
+function methodName() {
+    const selector = element.querySelector('[id$="-value"]');
+    return selector?.textContent || '';
+}
+EOF
+
+python3 CC/codecrispr.py file.js methodName "$(cat method_fix.js)"
+```
+
+### When to Use File-Based Input
+
+Always use this approach when your replacement code contains:
+- Multiple types of quotes (single, double)
+- Special characters ($, \\, `, etc.)
+- Multi-line content with preserved indentation
+- Complex formatting that needs to be maintained exactly
+
+This reliable approach eliminates the most common sources of errors when using CodeCRISPR and is strongly recommended for all but the simplest code replacements.
 ### Advanced Usage
 
 #### JSON Output
@@ -214,6 +249,10 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 | TypeScript | .ts, .tsx | Pattern-based |
 | XML | .xml | Tag-based |
 
+> **Note on Language Parsing Limitations**: Each language parser has specific limitations and edge cases. 
+> For detailed information about these limitations and recommended workarounds,
+> refer to the language-specific guides in the docs/tool_guides directory.
+
 ### Parser Types
 - Pattern-based refers to tools that use regular expressions to identify function or method patterns (e.g., Java, Rust, Go).
 - Block-based is used for languages where logical units are enclosed in braces or similar delimiters without formal declaration syntax (e.g., CSS, Shell, SPSS).
@@ -230,6 +269,8 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
 - [CodeCRISPR Features Guide](docs/guides/codecrispr_features.md) - Information about features under-the-hood
 - [Customization Guide](docs/guides/customization.md) - Information about cutomizing via the INI file
+- [Language-Specific Caveats](docs/guides/language_caveats.md) - Important limitations and workarounds for each supported language
+- [Error Handling Guide](docs/guides/error_handling_guide.md) - Detailed troubleshooting guide for common error scenarios
 - Language Specific Guides
   - [C++ Tool Guide](docs/tool_guides/cpp_tool_guide.md)
   - [CSS Tool Guide](docs/tool_guides/css_tool_guide.md)
@@ -322,6 +363,38 @@ Each language tool implements the `CodeCRISPR` class with required methods for p
 - **CI/CD Integration**: JSON output enables seamless toolchain integration
 - **Batch Processing**: Update multiple files and functions in automation scripts
 
+### Complex JavaScript Method Update
+
+Using the file-based input approach for a complex JavaScript method with special characters:
+
+```bash
+# Create temporary file with the exact code
+cat > new_render_method.js << 'EOF'
+render() {
+  const element = document.querySelector('#app');
+  const data = this.state.items.map(item => `
+    <li class="item" data-id="${item.id}">
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      ${item.isSpecial ? '<span class="special">★</span>' : ''}
+    </li>
+  `).join('');
+  
+  element.innerHTML = `<ul class="items">${data}</ul>`;
+  
+  // Add event listeners
+  document.querySelectorAll('[data-id]').forEach(el => {
+    el.addEventListener('click', () => this.handleClick(el.dataset.id));
+  });
+}
+EOF
+
+# Use command substitution to pass the content
+python3 CC/codecrispr.py app.js render "$(cat new_render_method.js)"
+```
+
+This approach ensures that all template literals, quotes, and special characters are preserved exactly as written without requiring complex escape sequences.
+
 ## Performance
 
 CodeCRISPR is designed for efficiency:
@@ -355,12 +428,86 @@ See the [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) for 
 >
 > >As a built-in feature, if `backup_enabled` is set to its default of `true` and multiple updates are applied to the same file, CodeCRISPR will create sequentially numbered `.bak` files to avoid overwriting previous backups. Nevertheless, please backup your own files.
 
-### Common Issues
+### Common Error Scenarios and Solutions
 
-1. **Permission Errors**: Ensure the file has write permissions
-2. **Parser Not Found**: Check that the file extension is supported
-3. **Method Not Found**: Use `--inspect` to see available methods
-4. **JSON Parse Errors**: Validate your batch JSON file format
+#### 1. Method Not Found Errors
+
+**Scenario**: `[ERROR] Method 'function_name' not found.`
+
+**Potential Causes**:
+- Method name misspelled
+- Method exists but wasn't detected by the parser
+- Method is defined dynamically or conditionally
+- Method is nested inside another function/class
+
+**Solutions**:
+- Use `--inspect` to get the exact method names from the reference map
+- Verify case sensitivity and exact spelling
+- For nested methods, target the parent method/class instead
+- Use `edit_block` as a fallback for methods that aren't being detected
+
+#### 2. Syntax Errors After Editing
+
+**Scenario**: The edited file contains syntax errors after using CodeCRISPR.
+
+**Potential Causes**:
+- Incorrect indentation in the replacement code
+- Missing parentheses, braces, or other syntax elements
+- Inconsistent line endings (CRLF vs LF)
+- Invisible/non-printing characters in the replacement code
+
+**Solutions**:
+- Use `--preview-changes` before applying changes to verify syntax
+- Ensure consistent indentation matching the file's style
+- Check for balanced parentheses, braces, and quotation marks
+- Use the file-based input approach to avoid shell interpretation issues
+- Run a syntax validator after editing (e.g., `python -m py_compile` for Python files)
+
+#### 3. File Permission Errors
+
+**Scenario**: `[ERROR] Failed to write file: Permission denied`
+
+**Potential Causes**:
+- The file is read-only
+- The file is owned by another user
+- The file is locked by another process
+- The file is in a directory with restricted permissions
+
+**Solutions**:
+- Check file permissions with `ls -l <filepath>`
+- Change permissions with `chmod u+w <filepath>`
+- Close any applications that might have the file open
+- Copy the file to a location with appropriate permissions, edit there, then move back
+
+#### 4. Command Line Escaping Issues
+
+**Scenario**: Arguments containing special characters aren't interpreted correctly.
+
+**Potential Causes**:
+- Shell interpretation of quotes, variables, or escape sequences
+- Backticks being interpreted as command substitution
+- Dollar signs being interpreted as variable references
+- Newlines or tabs in the replacement code
+
+**Solutions**:
+- Use the file-based input approach for complex replacement code as described in the [File-Based Input section](#file-based-input-the-recommended-approach-for-complex-code)
+
+#### 5. Parser Detection Issues
+
+**Scenario**: CodeCRISPR fails to correctly identify functions or sections in the file.
+
+**Potential Causes**:
+- Unusual coding style or non-standard syntax
+- Mixed language content in a single file
+- The file type isn't correctly detected
+- The language parser has limitations for certain constructs
+
+**Solutions**:
+- Use an explicit language tool via the config if detection fails
+- Format the code with a standard formatter before editing
+- Use simpler, more standard syntax for problematic code sections
+- Split mixed-language files into separate files if possible
+- Use `edit_block` for sections that aren't properly detected
 
 ### Getting Help
 
