@@ -201,10 +201,8 @@ This confirms the replacement and shows what changed.
 ```json
 {
   "updates": [
-    { "method": "add", "code": "def add(a, b):
-    return a * b" },
-    { "method": "multiply", "code": "def multiply(a, b):
-    return a + b" }
+    { "method": "add", "code": "def add(a, b):\\n    return a * b" },
+    { "method": "multiply", "code": "def multiply(a, b):\\n    return a + b" }
   ]
 }
 ```
