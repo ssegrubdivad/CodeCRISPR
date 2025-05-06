@@ -36,11 +36,9 @@ Under the hood, CodeCRISPR achieves this efficiency through lightweight design. 
 
 ## Development Workflow
 
-In practice, CodeCRISPR transforms your interaction with Claude from a series of copy-paste operations into a fluid conversation about code. You might start by asking Claude to inspect a file and list all available functions. Claude uses CodeCRISPR to quickly scan the file and present you with a map of your code structure. You then identify a function that needs modification and ask Claude to make specific changes. Claude targets just that function, shows you the modifications, and updates the file - all without you needing to manually copy code back and forth.
+CodeCRISPR's workflow supports common development patterns like refactoring, where you might need to update multiple functions to use a new API or follow a different design pattern. Claude can systematically work through each function, applying consistent changes through a batch process, all while leaving the rest of your codebase untouched. It also excels at code review scenarios, where you can ask Claude to examine specific functions for potential improvements or security issues without overwhelming the context window with irrelevant code.
 
-This workflow supports common development patterns like refactoring, where you might need to update multiple functions to use a new API or follow a different design pattern. Claude can systematically work through each function, applying consistent changes while leaving the rest of your codebase untouched. It also excels at code review scenarios, where you can ask Claude to examine specific functions for potential improvements or security issues without overwhelming the context window with irrelevant code.
-
-The framework's language-agnostic design means this same workflow applies whether you're working with Python, JavaScript, HTML, CSS, or any of the dozen supported languages. Each language has its own parser that understands the specific syntax patterns for identifying code blocks, but the interface remains consistent. This universality makes CodeCRISPR a versatile tool for polyglot developers who work across multiple languages and frameworks.
+The framework's language-agnostic design means this same workflow applies whether you're working with Python, JavaScript, HTML, CSS, or any of the dozens of supported languages. Each language has its own parser that understands the specific syntax patterns for identifying code blocks, but the interface remains consistent. This universality makes CodeCRISPR a versatile tool for polyglot developers who work across multiple languages and frameworks.
 
 ## Advanced Features and Configuration
 

@@ -228,6 +228,7 @@ Configuration file is stored at `~/.codecrispr/config.ini`
 - [A Comprehensive Explanation of CodeCRISPR](docs/guides/narrative_overview.md) - A detailed narrative overview of all that is CodeCRiSPER, for those who like to read
 - [Novice User Guide](docs/guides/novice_user_guide.md) - Friendly introduction for new users
 - [Advanced Technical Guide](docs/guides/advanced_technical_guide.md) - Deep dive into architecture and extension
+- [CodeCRISPR Features Guide](docs/guides/codecrispr_features.md) - Information about features under-the-hood
 - [Customization Guide](docs/guides/customization.md) - Information about cutomizing via the INI file
 - Language Specific Guides
   - [C++ Tool Guide](docs/tool_guides/cpp_tool_guide.md)
