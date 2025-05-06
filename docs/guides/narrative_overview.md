@@ -26,7 +26,7 @@ Think of it this way: if AST parsing is like creating a detailed anatomical diag
 
 This lightweight nature is particularly beneficial when working with Claude because it minimizes the computational overhead on both ends. Claude doesn't need to process complex tree structures or maintain detailed syntax information-it simply needs to know the boundaries of the code sections it's working with. This efficiency translates directly into faster response times and lower token usage.
 
-## The Value for Claude Users
+## Real Token Savings for Claude Users
 
 Consider a scenario where you're working on a 2,000-line Python file with 50 functions, and you need to update error handling in five specific functions. Without CodeCRISPR, each modification would require Claude to process the entire file, consuming roughly 2,000 tokens for input and another 2,000 for output - that's 20,000 tokens for five simple changes. With CodeCRISPR, Claude only needs to process and output the specific functions being modified, potentially reducing token usage by 80-90%.
 
