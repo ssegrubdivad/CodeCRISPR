@@ -16,39 +16,92 @@ from pathlib import Path
 
 # Extended language mappings with additional file extensions
 LANGUAGE_MAP = {
+    # Python
     '.py': 'python_tool',
     '.pyw': 'python_tool',
     '.pyi': 'python_tool',  # Python stub files
+    
+    # JavaScript
     '.js': 'javascript_tool',
     '.mjs': 'javascript_tool',  # ES modules
     '.cjs': 'javascript_tool',  # CommonJS modules
     '.jsx': 'javascript_tool',  # React JSX
+    
+    # TypeScript
     '.ts': 'typescript_tool',
     '.tsx': 'typescript_tool',  # React TSX
+    
+    # HTML
     '.html': 'html_tool',
     '.htm': 'html_tool',
+    
+    # CSS
     '.css': 'css_tool',
     '.scss': 'css_tool',  # Sass
     '.less': 'css_tool',  # Less
+    
+    # PHP
     '.php': 'php_tool',
     '.php3': 'php_tool',
     '.php4': 'php_tool',
     '.php5': 'php_tool',
     '.phtml': 'php_tool',
+    
+    # Rust
     '.rs': 'rust_tool',
+    
+    # C++
     '.cpp': 'cpp_tool',
     '.cxx': 'cpp_tool',
     '.cc': 'cpp_tool',
     '.hpp': 'cpp_tool',  # C++ headers
     '.hxx': 'cpp_tool',
     '.h': 'cpp_tool',
+    
+    # R
     '.r': 'r_tool',
     '.R': 'r_tool',  # R is case-sensitive
+    
+    # MATLAB
     '.m': 'matlab_tool',
+    
+    # LaTeX
     '.tex': 'latex_tool',
+    
+    # SPSS
     '.sps': 'spss_tool',
     '.spss': 'spss_tool',
-    '.md': 'markdown_tool'
+    
+    # Markdown
+    '.md': 'markdown_tool',
+    
+    # Go
+    '.go': 'go_tool',
+    
+    # Java
+    '.java': 'java_tool',
+    
+    # JSON
+    '.json': 'json_tool',
+    
+    # Julia
+    '.jl': 'julia_tool',
+    
+    # Shell Scripts
+    '.sh': 'shell_tool',
+    '.bash': 'shell_tool',
+    
+    # SQL
+    '.sql': 'sql_tool',
+    
+    # SVG
+    '.svg': 'svg_tool',
+    
+    # Swift
+    '.swift': 'swift_tool',
+    
+    # XML
+    '.xml': 'xml_tool'
 }
 
 DEFAULT_CONFIG = {

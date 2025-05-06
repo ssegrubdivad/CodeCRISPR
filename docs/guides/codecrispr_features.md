@@ -72,27 +72,6 @@ CodeCRISPR provides a comprehensive set of command line flags:
 
 ---
 
-## File Types and Parsers
-
-Each supported file type has a dedicated parsing strategy, defined in the `LANGUAGE_MAP` dictionary:
-
-- Python (`.py`, `.pyw`, `.pyi`): Indentation-based
-- JavaScript/TypeScript (`.js`, `.mjs`, `.cjs`, `.jsx`, `.ts`, `.tsx`): Pattern-based
-- HTML (`.html`, `.htm`): Tag-based
-- CSS (`.css`, `.scss`, `.less`): Block-based
-- PHP (`.php`, `.php3`, `.php4`, `.php5`, `.phtml`): Pattern-based
-- Rust (`.rs`): Pattern-based
-- C++ (`.cpp`, `.cxx`, `.cc`, `.hpp`, `.hxx`, `.h`): Pattern-based
-- R (`.r`, `.R`): Pattern-based
-- MATLAB (`.m`): Pattern-based
-- LaTeX (`.tex`): Environment-based
-- SPSS (`.sps`, `.spss`): Block-based
-- Markdown (`.md`): Heading-based
-
-The system is designed to be extensible with additional language parsers.
-
----
-
 ## Configuration System
 
 CodeCRISPR includes a configurable settings system:
