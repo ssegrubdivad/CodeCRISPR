@@ -18,7 +18,7 @@ The workflow becomes remarkably efficient. You can simply tell Claude something 
 
 ## Why CodeCRISPR Differs from AST Approaches
 
-For technical users familiar with Abstract Syntax Trees (AST), CodeCRISPR offers a deliberately lightweight alternative that prioritizes efficiency over exhaustive parsing. Traditional AST-based tools (and there are many, but they tend to be language-specific) parse code into a complete tree structure representing every syntactic element-every variable, operator, and expression. While this provides comprehensive understanding, it comes with significant overhead in terms of memory usage and processing time.
+For technical users familiar with Abstract Syntax Trees (AST), CodeCRISPR offers a deliberately lightweight alternative that prioritizes efficiency over exhaustive parsing. Traditional AST-based tools (and there are many, but they tend to be language-specific) parse code into a complete tree structure representing every syntactic element—every variable, operator, and expression. While this provides comprehensive understanding, it comes with significant overhead in terms of memory usage and processing time.
 
 CodeCRISPR takes a different approach, focusing only on the structural boundaries that matter for most editing operations: where functions, methods, and code blocks begin and end. It uses simple pattern matching and indentation tracking rather than full syntactic parsing. This design choice makes CodeCRISPR orders of magnitude faster and lighter than AST-based tools while still providing the precision needed for most code modification tasks.
 
