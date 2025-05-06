@@ -26,13 +26,15 @@ Think of it this way: if AST parsing is like creating a detailed anatomical diag
 
 This lightweight nature is particularly beneficial when working with Claude because it minimizes the computational overhead on both ends. Claude doesn't need to process complex tree structures or maintain detailed syntax information-it simply needs to know the boundaries of the code sections it's working with. This efficiency translates directly into faster response times and lower token usage.
 
-## Real Token Savings for Claude Users
+## Real-World Efficiency and Token Savings
 
-Consider a scenario where you're working on a 2,000-line Python file with 50 functions, and you need to update error handling in five specific functions. Without CodeCRISPR, each modification would require Claude to process the entire file, consuming roughly 2,000 tokens for input and another 2,000 for output - that's 20,000 tokens for five simple changes. With CodeCRISPR, Claude only needs to process and output the specific functions being modified, potentially reducing token usage by 80-90%.
+CodeCRISPR is engineered to address both computational and economic inefficiencies in AI-assisted coding, especially when working with large files. Traditionally, when you ask Claude to modify a function within a lengthy script—say, a 2,000-line Python file with 50 functions—it must read the entire file into context, identify the relevant code, perform the edit, and then print the entire modified file back to you. This workflow often consumes thousands of tokens per operation, even when the change itself is trivial. For example, updating five functions in such a file could cost 20,000 tokens or more. With CodeCRISPR, Claude only needs to operate on the specific blocks being modified, reducing token usage by 80–90% in most cases.
 
-This efficiency gain becomes even more pronounced in iterative development scenarios. As you refine and debug code with Claude's help, each iteration becomes a quick, targeted operation rather than a costly full-file rewrite. The framework also reduces the cognitive load on both you and Claude by maintaining clear boundaries between different code sections, making it easier to focus on the specific problem at hand without getting distracted by unrelated code.
+These savings are magnified during iterative development. Instead of repeatedly consuming and regenerating entire files, Claude can perform quick, focused edits to individual code blocks with minimal context. This targeted workflow not only accelerates debugging and refinement but also minimizes the risk of unintended side effects elsewhere in the file. The framework’s internal reference map clearly isolates functions, methods, or structural sections—lowering the cognitive load on both Claude and the user, and keeping interactions tightly scoped to the task at hand.
 
-## Real-World Development Workflow
+Under the hood, CodeCRISPR achieves this efficiency through lightweight design. The initial file parse is linear in the number of lines (O(n)), but once complete, operations like replacing a specific method occur in constant time (O(1)). All operations are performed in memory, with disk writes occurring only when changes are explicitly saved. This means that even for very large files, response times remain in the millisecond range. The reference map is updated incrementally after each change, maintaining accurate position tracking without requiring a full re-parse. For typical development files—up to 10,000 lines—CodeCRISPR is effectively instantaneous, ensuring that performance never becomes a bottleneck in your interaction with Claude.
+
+## Development Workflow
 
 In practice, CodeCRISPR transforms your interaction with Claude from a series of copy-paste operations into a fluid conversation about code. You might start by asking Claude to inspect a file and list all available functions. Claude uses CodeCRISPR to quickly scan the file and present you with a map of your code structure. You then identify a function that needs modification and ask Claude to make specific changes. Claude targets just that function, shows you the modifications, and updates the file - all without you needing to manually copy code back and forth.
 
@@ -47,22 +49,6 @@ The recent updates to CodeCRISPR have introduced several sophisticated features 
 Batch operations represent a significant productivity enhancement, allowing you to define multiple changes in a JSON file and apply them all at once. This is particularly useful for systematic refactoring or when applying similar changes across multiple functions. The system intelligently orders these operations to prevent issues with shifting line numbers, ensuring reliable execution even with complex modification sequences.
 
 The preview functionality with diff output brings a safety net to code modifications. Before applying any change, you can see exactly what will be modified in a familiar unified diff format. This feature is especially valuable when working on critical code sections where mistakes could be costly. The JSON output capability transforms CodeCRISPR from a standalone tool into a component that can be integrated into larger development workflows, enabling automation and toolchain integration.
-
-## Performance and Efficiency Characteristics
-
-CodeCRISPR's performance characteristics make it particularly well-suited for integration with AI assistants. The initial file parsing is linear in the number of lines (O(n)), but subsequent operations are effectively constant time (O(1)) for locating specific code blocks. This means that even for very large files, the overhead of using CodeCRISPR remains minimal.
-
-The framework maintains its efficiency by keeping all operations in memory and only writing to disk when explicitly saving changes. This approach minimizes I/O operations and ensures that iterative modifications remain fast. The reference map is updated incrementally after each change, maintaining accurate line number information without requiring a complete re-parse of the file.
-
-For typical development files (under 10,000 lines), CodeCRISPR's operations complete in milliseconds, making the tool essentially transparent in terms of user experience. Even for exceptionally large files, the framework's lightweight approach ensures that operations remain responsive and don't create noticeable delays in your interaction with Claude.
-
-## Integration Benefits with Claude Desktop
-
-The integration of CodeCRISPR with Claude Desktop through MCP creates a development environment that feels native and responsive. Instead of constantly switching between your editor, terminal, and Claude interface, you can maintain your conversation with Claude while it directly manipulates your code files. This integration reduces context switching and helps maintain your flow state during development.
-
-The security model of MCP ensures that Claude only has access to designated directories, providing peace of mind while granting the necessary permissions for effective code assistance. You can configure multiple workspaces for different projects, each with its own permissions and access controls. This flexibility allows you to use Claude for both personal projects and professional work while maintaining appropriate security boundaries.
-
-The combination also enables more sophisticated development workflows. You can ask Claude to analyze multiple files, identify cross-cutting concerns, and apply consistent changes across your codebase. The efficiency of CodeCRISPR means these multi-file operations remain practical in terms of token usage, opening up possibilities for larger-scale refactoring and code modernization tasks.
 
 ## Ecosystem Development
 
