@@ -24,7 +24,7 @@ CodeCRISPR takes a different approach, focusing only on the structural boundarie
 
 Think of it this way: if AST parsing is like creating a detailed anatomical diagram of every organ, blood vessel, and nerve in the body, CodeCRISPR is like creating a map that shows where each major organ begins and ends. For the task of "replacing the heart," Claude doesn't need to know about every vein—he only needs to know that the heart exists and that instructions can be sent to the local commandline to remove and replace it with what Claude wants, cleanly and efficiently.
 
-This lightweight nature is particularly beneficial when working with Claude because it minimizes the computational overhead on both ends. Claude doesn't need to process complex tree structures or maintain detailed syntax information-it simply needs to know the boundaries of the code sections it's working with. This efficiency translates directly into faster response times and lower token usage.
+This lightweight nature is particularly beneficial when working with Claude because it minimizes the computational overhead on both ends. Claude doesn't need to process complex tree structures or maintain detailed syntax information—it simply needs to know the boundaries of the code sections it's working with. This efficiency translates directly into faster response times and lower token usage.
 
 ## Real-World Efficiency and Token Savings
 
